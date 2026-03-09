@@ -13,7 +13,7 @@ VOLUME_MULTIPLIER = 1.0             # realistic spike detection
 RSI_LONG_MAX = 55                    # LONG only if RSI < 55
 RSI_SHORT_MIN = 45                   # SHORT only if RSI > 45
 CONFIDENCE_THRESHOLD = 10
-MIN_DAILY_VOLUME = 2000
+MIN_DAILY_VOLUME = 0
 ATR_MULTIPLIER = 1.5
 
 # ===== GET KLINES WITH RETRY =====
