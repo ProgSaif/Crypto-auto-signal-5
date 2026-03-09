@@ -1,17 +1,32 @@
 import os
 import asyncio
 from telegram import Bot
+from telegram.error import InvalidToken
+from dotenv import load_dotenv
 from scanner import scan_market
 from poster import generate_signal_message
+
+# ===== Load environment variables from .env =====
+load_dotenv()
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 CHANNEL_ID = os.getenv("CHANNEL_ID")
 
-bot = Bot(token=BOT_TOKEN)
+# ===== Validate token & channel =====
+if not BOT_TOKEN or BOT_TOKEN.strip() == "":
+    raise ValueError("❌ BOT_TOKEN is missing! Please set it in your .env file.")
+if not CHANNEL_ID or CHANNEL_ID.strip() == "":
+    raise ValueError("❌ CHANNEL_ID is missing! Please set it in your .env file.")
+
+try:
+    bot = Bot(token=BOT_TOKEN)
+except InvalidToken:
+    raise ValueError("❌ Invalid BOT_TOKEN! Make sure you copied it correctly from BotFather.")
+
 posted = set()
 
 # ===== Safe send function with auto-delete =====
-async def send_message_safe(message, delete_after=3000):
+async def send_message_safe(message, delete_after=300):
     for i in range(3):
         try:
             msg = await bot.send_message(chat_id=CHANNEL_ID, text=message)
@@ -57,4 +72,5 @@ async def run_bot():
             print("Bot error:", e)
         await asyncio.sleep(30)  # wait before next scan
 
+# ===== Run the bot =====
 asyncio.run(run_bot())
