@@ -1,8 +1,4 @@
-Here’s a professional **README.md** for your GitHub repo, ready to copy and paste:
-
----
-
-# 🚀 Crypto Signal Bot – High Quality Signals
+ 🚀 Crypto Signal Bot – High Quality Signals
 
 A **Telegram bot** that automatically scans all USDT trading pairs on Binance and posts **high-quality trading signals** using **RSI, EMA trend, volume spikes, and ATR-based TP/SL**.
 
