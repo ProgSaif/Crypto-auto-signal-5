@@ -14,7 +14,7 @@ RSI_LONG_MAX = 55                    # LONG only if RSI < 55
 RSI_SHORT_MIN = 45                   # SHORT only if RSI > 45
 CONFIDENCE_THRESHOLD = 10
 MIN_DAILY_VOLUME = 0
-ATR_MULTIPLIER = 1.5
+ATR_MULTIPLIER = 3
 
 # ===== GET KLINES WITH RETRY =====
 def get_klines(symbol, interval="5m", limit=200, retries=3):
