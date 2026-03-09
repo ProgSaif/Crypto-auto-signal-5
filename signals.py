@@ -8,10 +8,10 @@ EMA_FAST = 9
 EMA_SLOW = 21
 RSI_PERIOD = 14
 
-PRICE_MOVE_THRESHOLD = 0.005        # 0.5% price move
+PRICE_MOVE_THRESHOLD = 0.05        # 0.5% price move
 VOLUME_MULTIPLIER = 1.0             # realistic spike detection
-RSI_LONG_MAX = 55                    # LONG only if RSI < 55
-RSI_SHORT_MIN = 45                   # SHORT only if RSI > 45
+RSI_LONG_MAX = 90                    # LONG only if RSI < 90
+RSI_SHORT_MIN = 10                   # SHORT only if RSI > 10
 CONFIDENCE_THRESHOLD = 10
 MIN_DAILY_VOLUME = 0
 ATR_MULTIPLIER = 3
@@ -109,7 +109,7 @@ def calculate_signal(symbol, last_price, change_pct, df, daily_volume, df_higher
         return None
 
     if atr is None:
-        atr = last_price * 0.01
+        atr = last_price * 0.2
 
     if trade_type == "LONG":
         entry = last_price
