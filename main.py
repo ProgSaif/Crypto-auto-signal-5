@@ -11,7 +11,7 @@ bot = Bot(token=BOT_TOKEN)
 posted = set()
 
 # ===== Safe send function with auto-delete =====
-async def send_message_safe(message, delete_after=300):
+async def send_message_safe(message, delete_after=3000):
     for i in range(3):
         try:
             msg = await bot.send_message(chat_id=CHANNEL_ID, text=message)
