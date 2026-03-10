@@ -9,7 +9,7 @@ EMA_SLOW = 21
 RSI_PERIOD = 14
 
 PRICE_MOVE_THRESHOLD = 0.001        # 0.5% price move
-VOLUME_MULTIPLIER = 0.1             # realistic spike detection
+VOLUME_MULTIPLIER = 0             # realistic spike detection
 RSI_LONG_MAX = 90                    # LONG only if RSI < 90
 RSI_SHORT_MIN = 10                   # SHORT only if RSI > 10
 CONFIDENCE_THRESHOLD = 10
