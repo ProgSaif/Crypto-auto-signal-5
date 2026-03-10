@@ -4,15 +4,15 @@ import requests
 import time
 
 # ===== PARAMETERS =====
-EMA_FAST = 9
-EMA_SLOW = 21
-RSI_PERIOD = 14
+EMA_FAST = 0
+EMA_SLOW = 0
+RSI_PERIOD = 0
 
-PRICE_MOVE_THRESHOLD = 0.001        # 0.5% price move
+PRICE_MOVE_THRESHOLD = 0.000        # 0.5% price move
 VOLUME_MULTIPLIER = 0             # realistic spike detection
-RSI_LONG_MAX = 90                    # LONG only if RSI < 90
-RSI_SHORT_MIN = 10                   # SHORT only if RSI > 10
-CONFIDENCE_THRESHOLD = 10
+RSI_LONG_MAX = 0                    # LONG only if RSI < 90
+RSI_SHORT_MIN = 0                   # SHORT only if RSI > 10
+CONFIDENCE_THRESHOLD = 0
 MIN_DAILY_VOLUME = 0
 ATR_MULTIPLIER = 2
 
