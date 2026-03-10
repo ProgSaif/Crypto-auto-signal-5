@@ -17,7 +17,7 @@ MIN_DAILY_VOLUME = 0
 ATR_MULTIPLIER = 3
 
 # ===== GET KLINES WITH RETRY =====
-def get_klines(symbol, interval="5m", limit=200, retries=3):
+def get_klines(symbol, interval="1h", limit=200, retries=3):
     url = f"https://api.binance.us/api/v3/klines?symbol={symbol}&interval={interval}&limit={limit}"
     for attempt in range(retries):
         try:
