@@ -14,7 +14,7 @@ RSI_LONG_MAX = 90                    # LONG only if RSI < 90
 RSI_SHORT_MIN = 10                   # SHORT only if RSI > 10
 CONFIDENCE_THRESHOLD = 10
 MIN_DAILY_VOLUME = 0
-ATR_MULTIPLIER = 3
+ATR_MULTIPLIER = 2
 
 # ===== GET KLINES WITH RETRY =====
 def get_klines(symbol, interval="1h", limit=200, retries=3):
@@ -109,7 +109,7 @@ def calculate_signal(symbol, last_price, change_pct, df, daily_volume, df_higher
         return None
 
     if atr is None:
-        atr = last_price * 0.2
+        atr = last_price * 1
 
     if trade_type == "LONG":
         entry = last_price
